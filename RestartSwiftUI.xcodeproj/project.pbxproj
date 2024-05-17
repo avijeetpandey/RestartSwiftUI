@@ -79,12 +79,28 @@
 		8A9EC0D02BF7433600B413EE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8A9EC0DA2BF74EEF00B413EE /* Home */,
+				8A9EC0D92BF74EEA00B413EE /* Onboarding */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8A9EC0D92BF74EEA00B413EE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
 				8A9EC0D12BF7434200B413EE /* OnboardingView.swift */,
 				8A9EC0D32BF744CE00B413EE /* OnboardingHeaderView.swift */,
 				8A9EC0D52BF7461B00B413EE /* OnboardingRingView.swift */,
 				8A9EC0D72BF7493200B413EE /* OnboardingFooterView.swift */,
 			);
-			path = Views;
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		8A9EC0DA2BF74EEF00B413EE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

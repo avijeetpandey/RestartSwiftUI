@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct RootView: View {
+    @AppStorage("onboarding") var isOnboardingViewActive: Bool = false
+    
     var body: some View {
-        OnboardingView()
+        if isOnboardingViewActive {
+            OnboardingView()
+        } else {
+            HomeView()
+        }
     }
 }
 

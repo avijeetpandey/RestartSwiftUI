@@ -20,11 +20,11 @@ struct OnboardingView: View {
                 Spacer()
                 OnboardingHeaderView()
                 Spacer()
-                OnboardingRingView()
+                OnboardingRingView(shapeColor: .white, shapeOpacity: 0.2)
                 Spacer()
                 OnboardingFooterView()
                     .onTapGesture {
-                        isOnboardingViewActive.toggle()
+                        isOnboardingViewActive = false
                     }
             }
         }

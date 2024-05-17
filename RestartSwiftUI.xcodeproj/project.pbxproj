@@ -15,6 +15,7 @@
 		8A9EC0D42BF744CE00B413EE /* OnboardingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9EC0D32BF744CE00B413EE /* OnboardingHeaderView.swift */; };
 		8A9EC0D62BF7461B00B413EE /* OnboardingRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9EC0D52BF7461B00B413EE /* OnboardingRingView.swift */; };
 		8A9EC0D82BF7493200B413EE /* OnboardingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9EC0D72BF7493200B413EE /* OnboardingFooterView.swift */; };
+		8A9EC0DC2BF74F5F00B413EE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9EC0DB2BF74F5F00B413EE /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		8A9EC0D32BF744CE00B413EE /* OnboardingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHeaderView.swift; sourceTree = "<group>"; };
 		8A9EC0D52BF7461B00B413EE /* OnboardingRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRingView.swift; sourceTree = "<group>"; };
 		8A9EC0D72BF7493200B413EE /* OnboardingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFooterView.swift; sourceTree = "<group>"; };
+		8A9EC0DB2BF74F5F00B413EE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		8A9EC0DA2BF74EEF00B413EE /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8A9EC0DB2BF74F5F00B413EE /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A9EC0D82BF7493200B413EE /* OnboardingFooterView.swift in Sources */,
+				8A9EC0DC2BF74F5F00B413EE /* HomeView.swift in Sources */,
 				8A9EC0D42BF744CE00B413EE /* OnboardingHeaderView.swift in Sources */,
 				8A9EC0D22BF7434200B413EE /* OnboardingView.swift in Sources */,
 				8A9EC0D62BF7461B00B413EE /* OnboardingRingView.swift in Sources */,

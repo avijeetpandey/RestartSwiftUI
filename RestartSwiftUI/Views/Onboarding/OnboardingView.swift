@@ -20,7 +20,15 @@ struct OnboardingView: View {
                 Spacer()
                 OnboardingHeaderView()
                 Spacer()
-                OnboardingRingView(shapeColor: .white, shapeOpacity: 0.2)
+                ZStack {
+                    OnboardingRingView(shapeColor: .white, shapeOpacity: 0.2)
+                    
+                    Image(.character1)
+                        .resizable()
+                        .scaledToFit()
+                }
+                
+                
                 Spacer()
                 OnboardingFooterView()
                     .onTapGesture {

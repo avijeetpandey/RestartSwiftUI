@@ -23,10 +23,6 @@ struct OnboardingRingView: View {
             Circle()
                 .stroke(shapeColor.opacity(shapeOpacity), lineWidth: 80)
                 .frame(width: 260, height: 260, alignment: .center)
-            
-            Image(.character1)
-                .resizable()
-                .scaledToFit()
         }
     }
 }

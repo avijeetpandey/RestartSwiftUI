@@ -60,12 +60,13 @@ struct OnboardingFooterView: View {
                                     buttonOffset = gesture.translation.width
                                 }
                             }.onEnded { _ in
-                                
-                                if buttonOffset > buttonWidth/2 {
-                                    buttonOffset = buttonWidth - 80
-                                    isOnboardingViewActive = false
-                                } else {
-                                    buttonOffset = 0
+                                withAnimation(.easeOut(duration: 0.4)) {
+                                    if buttonOffset > buttonWidth/2 {
+                                        buttonOffset = buttonWidth - 80
+                                        isOnboardingViewActive = false
+                                    } else {
+                                        buttonOffset = 0
+                                    }
                                 }
                             }
                     )

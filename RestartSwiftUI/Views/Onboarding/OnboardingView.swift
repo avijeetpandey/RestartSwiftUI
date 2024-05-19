@@ -9,7 +9,7 @@ import SwiftUI
 
 // MARK: - OnboardingView
 struct OnboardingView: View {
-    @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
+    @State var isAnimating: Bool = false
     
     var body: some View {
         ZStack {
@@ -18,15 +18,24 @@ struct OnboardingView: View {
             
             VStack(spacing: 20) {
                 Spacer()
-                OnboardingHeaderView()
+                OnboardingHeaderView(isAnimating: $isAnimating)
                 Spacer()
-                OnboardingRingView()
+                ZStack {
+                    OnboardingRingView(shapeColor: .white, shapeOpacity: 0.2)
+                    
+                    Image(.character1)
+                        .resizable()
+                        .scaledToFit()
+                        .opacity(isAnimating ? 1 : 0)
+                        .animation(.easeOut(duration: 0.5), value: isAnimating)
+                }
+                
+                
                 Spacer()
-                OnboardingFooterView()
-                    .onTapGesture {
-                        isOnboardingViewActive.toggle()
-                    }
+                OnboardingFooterView(isAnimating: $isAnimating)
             }
+        }.onAppear {
+            isAnimating = true
         }
     }
 }

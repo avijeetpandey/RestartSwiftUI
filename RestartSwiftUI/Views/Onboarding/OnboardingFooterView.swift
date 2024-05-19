@@ -9,6 +9,11 @@ import SwiftUI
 
 // MARK: - OnboardingFooterView
 struct OnboardingFooterView: View {
+    @AppStorage("onboarding") var isOnboardingViewActive: Bool = true
+    @State var buttonWidth: Double = UIScreen.main.bounds.width - 80
+    @State var buttonOffset: CGFloat = 0
+    @Binding var isAnimating: Bool
+    
     var body: some View {
         ZStack {
             Capsule()
@@ -27,7 +32,7 @@ struct OnboardingFooterView: View {
             HStack {
                 Capsule()
                     .fill(.colorRed)
-                    .frame(width: 80)
+                    .frame(width: buttonOffset + 80)
                 
                 Spacer()
             }
@@ -47,17 +52,37 @@ struct OnboardingFooterView: View {
                     
                 }.foregroundStyle(.white)
                     .frame(width: 80, height: 80, alignment: .center)
+                    .offset(x: buttonOffset)
+                    .gesture(
+                        DragGesture()
+                            .onChanged{ gesture in
+                                if gesture.translation.width > 0 && buttonOffset <= buttonWidth - 80 {
+                                    buttonOffset = gesture.translation.width
+                                }
+                            }.onEnded { _ in
+                                withAnimation(.easeOut(duration: 0.4)) {
+                                    if buttonOffset > buttonWidth/2 {
+                                        buttonOffset = buttonWidth - 80
+                                        isOnboardingViewActive = false
+                                    } else {
+                                        buttonOffset = 0
+                                    }
+                                }
+                            }
+                    )
                 
                 Spacer()
             }
             
-        }.frame(height: 80, alignment: .center)
+        }.frame(width: buttonWidth, height: 80, alignment: .center)
             .padding()
+            .offset(y: isAnimating ? 0 : 40)
+            .animation(.easeInOut(duration: 1), value: isAnimating)
     }
 }
 
 
 #Preview {
-    OnboardingFooterView()
+    OnboardingFooterView(isAnimating: .constant(true))
         .preferredColorScheme(.dark)
 }

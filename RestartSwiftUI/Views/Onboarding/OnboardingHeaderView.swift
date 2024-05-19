@@ -9,6 +9,8 @@ import SwiftUI
 
 // MARK: - OnboardingHeaderView
 struct OnboardingHeaderView: View {
+    @Binding var isAnimating: Bool
+    
     var body: some View {
         VStack {
             Text("Share.")
@@ -24,11 +26,13 @@ struct OnboardingHeaderView: View {
             .foregroundStyle(.white)
             .multilineTextAlignment(.center)
             .padding(.horizontal, 10)
-        }
+        }.opacity(isAnimating ? 1 : 0)
+            .offset(y: isAnimating ? 0 : -40)
+            .animation(.easeOut(duration: 1), value: isAnimating)
     }
 }
 
 #Preview {
-    OnboardingHeaderView()
+    OnboardingHeaderView(isAnimating: .constant(true))
         .preferredColorScheme(.dark)
 }
